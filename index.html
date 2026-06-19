@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>FEELINGME 端午开练</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="screen intro-screen is-active" id="introScreen" aria-labelledby="introTitle">
+        <div class="brand-bar">
+          <span class="brand-mark">FEELINGME</span>
+          <span class="festival-tag">端午开练</span>
+        </div>
+
+        <div class="hero-scene" aria-hidden="true">
+          <div class="hero-card">
+            <span class="hero-badge">5题挑战</span>
+            <img src="./assets/me-3d-web/1.png" alt="" />
+            <span class="hero-spark spark-one"></span>
+            <span class="hero-spark spark-two"></span>
+          </div>
+        </div>
+
+        <div class="intro-copy">
+          <p class="eyebrow">看图猜词</p>
+          <h1 id="introTitle">端午开练</h1>
+          <p class="subtitle">跟 ME 仔一起猜健身词。5 题挑战，猜中就有机会拿礼物。</p>
+        </div>
+
+        <button class="primary-btn" id="startBtn" type="button">开始挑战</button>
+      </section>
+
+      <section class="screen game-screen" id="gameScreen" aria-live="polite">
+        <header class="game-header">
+          <div>
+            <span class="brand-mark small">FEELINGME</span>
+            <h2>看图猜词</h2>
+          </div>
+          <div class="score-pill">
+            <span id="questionIndex">1</span>/<span id="questionTotal">5</span>
+          </div>
+        </header>
+
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <article class="quiz-panel">
+          <div class="category-row">
+            <span class="category-chip" id="categoryChip">运动器械</span>
+            <span class="chance-chip">1次机会</span>
+          </div>
+
+          <div class="image-stage" id="imageStage" aria-label="题目图片"></div>
+
+          <p class="hint-text" id="hintText">打一健身房里的器械</p>
+
+          <button class="soundless-hint" id="letterHintBtn" type="button">给一点点字形线索</button>
+
+          <label class="answer-label" for="answerInput">输入中文答案</label>
+          <div class="answer-boxes" id="answerBoxes" aria-hidden="true"></div>
+          <input
+            id="answerInput"
+            class="answer-input"
+            type="text"
+            inputmode="text"
+            lang="zh-CN"
+            placeholder="点这里输入答案"
+            autocomplete="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+
+          <p class="feedback" id="feedback" aria-live="polite"></p>
+
+          <button class="primary-btn submit-btn" id="submitBtn" type="button">确认答案</button>
+          <button class="secondary-btn next-btn" id="nextBtn" type="button">下一题</button>
+        </article>
+      </section>
+
+      <section class="screen result-screen" id="resultScreen" aria-labelledby="resultTitle">
+        <div class="result-card">
+          <span class="brand-mark small">FEELINGME</span>
+          <div class="medal" id="medalIcon" aria-hidden="true"></div>
+          <p class="eyebrow">本次答对 <strong id="finalScore">0</strong>/5 题</p>
+          <h2 id="resultTitle">端午热身观察员</h2>
+          <p class="result-copy" id="resultCopy">你已经进入运动状态，下一次可以从一个熟悉动作开始慢慢找回节奏。</p>
+          <div class="answer-review" id="answerReview"></div>
+          <a class="primary-btn gift-btn" id="giftBtn" href="#" target="_blank" rel="noreferrer">领取小礼物</a>
+          <button class="secondary-btn" id="restartBtn" type="button">再玩一次</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
